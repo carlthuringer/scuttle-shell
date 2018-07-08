@@ -46,7 +46,8 @@
     "setup-win": "node scripts/setup-win.js",
     "check": "node scripts/check-configuration.js",
     "setup": "node scripts/setup.js",
-    "install": "node scripts/install.js"
+    "install": "node scripts/install.js",
+    "nix-make": "node2nix -8 --supplement-input supplement.json && nix-build -A package"
   },
   "optionalDependencies": {
     "mkdirp": "^0.5.1",
