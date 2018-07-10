@@ -1777,13 +1777,13 @@ let
         sha512 = "PWYqG4Q00asOrLhX7BejSajByB4EmG2GaKHfj3h5UmmZ2duciXLPGYWIjBzLECFWUGOZWlm5B20h/n3Gs3HKew==";
       };
     };
-    "level-sublevel-6.6.2" = {
+    "level-sublevel-6.6.5" = {
       name = "level-sublevel";
       packageName = "level-sublevel";
-      version = "6.6.2";
+      version = "6.6.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/level-sublevel/-/level-sublevel-6.6.2.tgz";
-        sha512 = "+hptqmFYPKFju9QG4F6scvx3ZXkhrSmmhYui+hPzRn/jiC3DJ6VNZRKsIhGMpeajVBWfRV7XiysUThrJ/7PgXQ==";
+        url = "https://registry.npmjs.org/level-sublevel/-/level-sublevel-6.6.5.tgz";
+        sha512 = "SBSR60x+dghhwGUxPKS+BvV1xNqnwsEUBKmnFepPaHJ6VkBXyPK9SImGc3K2BkwBfpxlt7GKkBNlCnrdufsejA==";
       };
     };
     "leveldown-3.0.2" = {
@@ -3685,13 +3685,14 @@ let
         sha1 = "535d045ce6b6363fa40117084629995e9df324c7";
       };
     };
-    "systray-1.0.5" = {
+    "systray-git://github.com/ssbc/node-systray#6a68e85d0b785d93806b8e93433dc9bae59de66a" = {
       name = "systray";
       packageName = "systray";
-      version = "1.0.5";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/systray/-/systray-1.0.5.tgz";
-        sha512 = "qLsl5lk8lUuqCTaREJ0nR6NgF2y2Ni01vBjUs0cVWf54ZeV4pr3TFLMcUT+od1Twb1qQMq/SKyj+BKd2vg6+Fg==";
+      version = "2.0.0";
+      src = fetchgit {
+        url = "git://github.com/ssbc/node-systray";
+        rev = "6a68e85d0b785d93806b8e93433dc9bae59de66a";
+        sha256 = "4220788a5d39a743c3186f4d1a6fb738702ec778d966f5f923d7ee239d193630";
       };
     };
     "tape-4.9.1" = {
@@ -4324,7 +4325,7 @@ let
       sources."level-iterator-stream-2.0.3"
       sources."level-packager-2.1.1"
       sources."level-post-1.0.7"
-      (sources."level-sublevel-6.6.2" // {
+      (sources."level-sublevel-6.6.5" // {
         dependencies = [
           (sources."abstract-leveldown-0.12.4" // {
             dependencies = [
@@ -4640,7 +4641,7 @@ let
       sources."strip-ansi-3.0.1"
       sources."strip-json-comments-2.0.1"
       sources."supports-color-2.0.0"
-      (sources."systray-1.0.5" // {
+      (sources."systray-git://github.com/ssbc/node-systray#6a68e85d0b785d93806b8e93433dc9bae59de66a" // {
         dependencies = [
           sources."debug-3.1.0"
         ];
