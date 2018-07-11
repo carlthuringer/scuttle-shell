@@ -69,6 +69,7 @@ function start(customConfig) {
   // start server
 
   config.keys = keys
+  console.log("config:", config)
   const server = createSbot(config)
 
   // write RPC manifest to ~/.ssb/manifest.json
@@ -81,7 +82,6 @@ function start(customConfig) {
       title: 'Scuttle-Shell',
       tooltip: 'Secure Scuttlebutt',
       items: [
-
         {
           title: 'Quit',
           tooltip: 'Stop sbot and quit tray application',
@@ -95,6 +95,7 @@ function start(customConfig) {
   })
 
   tray.onClick(action => {
+	console.log("got action:",action)
     switch (action.seq_id) {
       case 0:
         console.log("### EXITING IN TWO SECONDS ###")
@@ -112,10 +113,10 @@ function start(customConfig) {
   })
 
   tray.onExit((code, signal) => {
+	console.log("got exit:", code)
     setTimeout(() =>
       process.exit(0), 2000)
   })
-
 }
 
 function stop() {
@@ -138,4 +139,5 @@ module.exports = { start, stop, getConfig }
 
 if (require.main === module) {
   var errorLevel = start()
+  console.log("exited with:", errorLevel)
 }
