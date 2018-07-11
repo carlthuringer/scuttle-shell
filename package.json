@@ -30,11 +30,13 @@
     "ssb-ebt": "^5.2.0",
     "ssb-friends": "^2.4.0",
     "ssb-keys": "^7.0.13",
+    "ssb-links": "^3.0.3",
     "ssb-meme": "^1.0.4",
     "ssb-names": "^3.1.0",
     "ssb-ooo": "^1.0.7",
     "ssb-private": "^0.2.1",
     "ssb-query": "^2.1.0",
+    "ssb-talequery": "^2.0.0",
     "ssb-search": "^1.1.1",
     "ssb-web-resolver": "^1.1.2",
     "ssb-ws": "^2.0.0",
@@ -47,7 +49,7 @@
     "check": "node scripts/check-configuration.js",
     "setup": "node scripts/setup.js",
     "install": "node scripts/install.js",
-    "nix-make": "node2nix -8 --supplement-input supplement.json && nix-build -A package"
+    "nix-make": "node2nix -8 --supplement-input supplement.json && nix-env -f . -qa"
   },
   "optionalDependencies": {
     "mkdirp": "^0.5.1",

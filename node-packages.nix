@@ -1993,13 +1993,13 @@ let
         sha512 = "x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==";
       };
     };
-    "mimic-response-1.0.0" = {
+    "mimic-response-1.0.1" = {
       name = "mimic-response";
       packageName = "mimic-response";
-      version = "1.0.0";
+      version = "1.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/mimic-response/-/mimic-response-1.0.0.tgz";
-        sha1 = "df3d3652a73fded6b9b0b24146e6fd052353458e";
+        url = "https://registry.npmjs.org/mimic-response/-/mimic-response-1.0.1.tgz";
+        sha512 = "j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==";
       };
     };
     "minimatch-3.0.4" = {
@@ -3550,6 +3550,15 @@ let
         sha512 = "k7CCfdugGYvNMZekGJXcCYuCdf7MEP+bBZr+AsZO5KqaNb4K9CuP6W1wGoKH6vkparhaCKc85jO46EbWsEoVDQ==";
       };
     };
+    "ssb-talequery-2.0.0" = {
+      name = "ssb-talequery";
+      packageName = "ssb-talequery";
+      version = "2.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ssb-talequery/-/ssb-talequery-2.0.0.tgz";
+        sha512 = "9F1x3G+p1Je17EB/Hb4FSg1y5cOnwpzG5RGAQutj1IqFv7Xfcg+zjUzBZvQi9epmPww2JQIoyfJH+CDBygy1zA==";
+      };
+    };
     "ssb-validate-3.0.9" = {
       name = "ssb-validate";
       packageName = "ssb-validate";
@@ -4240,11 +4249,7 @@ let
           sources."obv-0.0.0"
         ];
       })
-      (sources."flumeview-query-6.2.0" // {
-        dependencies = [
-          sources."map-filter-reduce-3.1.0"
-        ];
-      })
+      sources."flumeview-query-6.2.0"
       (sources."flumeview-reduce-1.3.13" // {
         dependencies = [
           sources."atomic-file-1.1.5"
@@ -4358,14 +4363,14 @@ let
       sources."lossy-store-1.2.3"
       sources."lru-cache-4.1.3"
       sources."ltgt-2.2.1"
-      sources."map-filter-reduce-2.2.1"
+      sources."map-filter-reduce-3.1.0"
       sources."map-merge-1.1.0"
       sources."markdown-table-0.4.0"
       sources."math-random-1.0.1"
       sources."mdmanifest-1.0.8"
       sources."micromatch-2.3.11"
       sources."mime-1.6.0"
-      sources."mimic-response-1.0.0"
+      sources."mimic-response-1.0.1"
       sources."minimatch-3.0.4"
       sources."minimist-1.2.0"
       (sources."mkdirp-0.5.1" // {
@@ -4611,7 +4616,11 @@ let
         ];
       })
       sources."ssb-keys-7.0.16"
-      sources."ssb-links-3.0.3"
+      (sources."ssb-links-3.0.3" // {
+        dependencies = [
+          sources."map-filter-reduce-2.2.1"
+        ];
+      })
       sources."ssb-meme-1.0.4"
       sources."ssb-msgs-5.2.0"
       sources."ssb-names-3.1.2"
@@ -4628,6 +4637,7 @@ let
           sources."pull-cont-0.1.1"
         ];
       })
+      sources."ssb-talequery-2.0.0"
       sources."ssb-validate-3.0.9"
       sources."ssb-web-resolver-1.1.2"
       sources."ssb-ws-2.1.1"
