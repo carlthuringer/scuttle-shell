@@ -45,6 +45,8 @@ function start(appname) {
     .use(require('ssb-private'))
     .use(require('ssb-search'))
     .use(require('ssb-query'))
+    .use(require('ssb-links'))     // needed by patchfoo
+    .use(require('ssb-talequery')) // only tale:net
     .use(require('ssb-ws'))
 
   // start server
