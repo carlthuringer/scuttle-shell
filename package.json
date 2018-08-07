@@ -40,7 +40,7 @@
     "ssb-search": "^1.1.1",
     "ssb-web-resolver": "^1.1.2",
     "ssb-ws": "^2.0.0",
-    "systray": "github:ssbc/node-systray#6a68e85d0b785d93806b8e93433dc9bae59de66a"
+    "systray": "github:ssbc/node-systray#e4b523e66d92877e9ca471e8c84b6616054b02c4"
   },
   "scripts": {
     "start": "node server.js",
